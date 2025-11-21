@@ -54,6 +54,15 @@
             background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
             border-radius: 50%;
         }
+.hero-section::before,
+.hero-section::after {
+    pointer-events: none;   /* 👈 don't block clicks */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;             /* 👈 ensure content sits above */
+}
 
         .hero-content {
             display: grid;
