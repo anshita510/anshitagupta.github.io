@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshita Gupta - Ph.D. Candidate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section with Split Layout */
+        .hero-section {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 25%, #14b8a6 50%, #5eead4 75%, #ccfbf1 100%);
+            padding: 3rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(251, 113, 133, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-left {
+            order: 1;
+        }
+
+        .hero-right {
+            order: 2;
+        }
+
+        .hero-left .title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #fde68a;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            border-top: 2px solid rgba(255,255,255,0.3);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f43f5e 0%, #fb7185 25%, #fda4af 50%, #fecdd3 75%, #ffe4e6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.4);
+            border: 5px solid white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-photo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: #0d9488;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #fb7185;
+        }
+
+        /* Biography Section */
+        .biography-section {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .bio-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #0d9488;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #0f766e 0%, #0d9488 25%, #14b8a6 50%, #fb7185 75%, #fda4af 100%);
+            border-radius: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text.intro {
+            font-size: 1.25rem;
+            color: #0d9488;
+            font-weight: 500;
+        }
+
+        .bio-text.closing {
+            font-style: italic;
+            color: #fb7185;
+            border-left: 4px solid #fb7185;
+            padding-left: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 33%, #14b8a6 66%, #2dd4bf 100%);
+            padding: 3rem 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #f43f5e 0%, #fb7185 50%, #fda4af 100%);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #fb7185;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 4rem 0;
+            background: white;
+            margin-bottom: 2rem;
+        }
+
+        section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        section h2 {
+            color: #0d9488;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #0f766e 0%, #0d9488 25%, #14b8a6 50%, #fb7185 75%, #fda4af 100%);
+            border-radius: 2px;
+        }
+
+        section h3 {
+            color: #fb7185;
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+
+        /* Research Interests Grid */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0f766e 0%, #0d9488 33%, #14b8a6 66%, #2dd4bf 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .research-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-card:hover {
+            border-color: #14b8a6;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
+        }
+
+        .research-card h4 {
+            font-size: 1.3rem;
+            color: #0d9488;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            padding-left: 2.5rem;
+            border-left: 3px solid #0d9488;
+            position: relative;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+            z-index: 1;
+        }
+
+        .timeline-item h4 {
+            color: #0d9488;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            color: #fb7185;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #0d9488;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .publication::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .publication:hover {
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.25);
+            transform: translateX(5px);
+        }
+
+        .publication strong {
+            color: #0d9488;
+        }
+
+        .paper-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #fb7185;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .paper-link:hover {
+            color: #0d9488;
+            text-decoration: underline;
+        }
+
+        /* Media Cards */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .media-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(13, 148, 136, 0.3);
+            border-color: #0d9488;
+        }
+
+        .media-card-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 33%, #14b8a6 66%, #0d9488 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .media-card-content {
+            padding: 1.2rem;
+        }
+
+        .media-card h4 {
+            color: #0d9488;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .media-title {
+            color: #fb7185;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .media-excerpt {
+            color: #64748b;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Patents & Copyrights */
+        .patent-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #0d9488;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .patent-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .patent-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.8rem;
+        }
+
+        .patent-status.granted {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .patent-status.filed {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .copyright-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .copyright-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .copyright-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .granted-bg {
+            background: #f0fdf4;
+            border-color: #10b981;
+        }
+
+        .registered-bg {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+
+        .filed-bg {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+
+        .copyright-status {
+            background: #f1f5f9;
+            color: #475569;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+
+        .copyright-item small {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background: #f0fdfa;
+            border-left: 4px solid #0d9488;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        /* Awards */
+        .award-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #fb7185;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .award-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #f43f5e 0%, #fb7185 50%, #fda4af 100%);
+            border-radius: 10px 0 0 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-right {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-left h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .profile-photo {
+                width: 220px;
+                height: 220px;
+                font-size: 6rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1>Anshita Gupta</h1>
+                    <p class="title">Ph.D. Candidate | Former CHANAKYA Fellow<br>
+                    <a href="https://cse.iitkgp.ac.in/~smisra/swan/" target="_blank" style="color: white; text-decoration: underline;">SWAN Lab Member</a><br>
+                    Department of Computer Science and Engineering<br>
+                    Indian Institute of Technology Kharagpur</p>
+                    
+                    <div class="tagline">
+                        Research for People, Connected Healthcare for All
+                    </div>
+                    
+                    <div class="contact-info">
+                        📧 <a href="/cdn-cgi/l/email-protection#9bfaf5e8f3f2effafceeebeffab5fafcdbf0fcebf2faf5b5f2f2eff0fcebb5faf8b5f2f5"><span class="__cf_email__" data-cfemail="771619041f1e03161002070316591610371c10071e1619591e1e031c1007591614591e19">[email&#160;protected]</span></a> • 
+                        <a href="/cdn-cgi/l/email-protection#6b0a051803021f0a0c1e1b1f0a450a0c2b0c060a020745080406"><span class="__cf_email__" data-cfemail="e889869b80819c898f9d989c89c6898fa88f85898184c68b8785">[email&#160;protected]</span></a><br>
+                        🎓 <a href="https://scholar.google.com/citations?user=RaxO4cQAAAAJ&hl=en" target="_blank">Google Scholar</a> • 
+                        🔗 <a href="https://www.linkedin.com/in/anshita-gupta-15b686217" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="profile-photo">
+                        <img src="https://webphoto.jpg" alt="Anshita Gupta" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                        <!-- Replace the imgur link above with your actual photo URL -->
+                        <!-- Temporary placeholder emoji below - remove once photo is uploaded -->
+                        <!-- 👩‍💻 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#patents">Patents</a></li>
+                <li><a href="#research">Research Positions</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Biography Section -->
+    <section id="biography" class="biography-section">
+        <div class="container">
+            <h2 class="section-title">Biography</h2>
+            <div class="bio-content">
+                <p class="bio-text intro">I am a Ph.D. candidate at the Indian Institute of Technology Kharagpur under the esteemed guidance of <a href="https://cse.iitkgp.ac.in/~smisra/" target="_blank" style="color: #0d9488; text-decoration: underline;">Prof. Sudip Misra</a>. My research focuses on collaborative edge intelligence for IoT healthcare, including federated learning, on-device machine learning, and causal analysis of health events.</p>
+                
+                <p class="bio-text">I work on building practical systems that use smartphones, wearables, and other resource-constrained devices for health monitoring, ranging from lung health screening tools to stress and well-being applications for students. I have a vision of making AI-driven healthcare support more accessible and usable in everyday settings.</p>
+                
+                <p class="bio-text">I also teach and mentor interns and students at IIT Kharagpur as a CEP lecturer and teaching assistant for core computer science and emerging technology courses. My long-term goal is to design deployment-ready AI systems that fit naturally into real-world healthcare systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Research Interests -->
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h4>🏥 IoT in Healthcare</h4>
+                </div>
+                <div class="research-card">
+                    <h4>🤝 Federated Learning</h4>
+                </div>
+                <div class="research-card">
+                    <h4>📱 On-device ML</h4>
+                </div>
+                <div class="research-card">
+                    <h4>🔗 Causal Chain Discovery</h4>
+                </div>
+                <div class="research-card">
+                    <h4>⏱️ Temporal Explanations</h4>
+                </div>
+                <div class="research-card">
+                    <h4>📡 Mobile & Passive Sensing</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <h4><a href="https://cse.iitkgp.ac.in/~anshitagupta/" target="_blank" style="color: #0d9488; text-decoration: underline;">Doctor of Philosophy, Computer Science & Engineering</a></h4>
+                <div class="timeline-date">Aug 2021 – Present</div>
+                <p><strong><a href="https://www.iitkgp.ac.in/" target="_blank" style="color: #0d9488; text-decoration: underline;">Indian Institute of Technology Kharagpur, India</a></strong></p>
+                <p>Research Topic: Collaborative Edge Intelligence (Advisor: <a href="https://cse.iitkgp.ac.in/~smisra/" target="_blank" style="color: #0d9488; text-decoration: underline;">Prof. Sudip Misra</a>)</p>
+            </div>
+            <div class="timeline-item">
+                <h4>M.Tech., Computer Science & Engineering</h4>
+                <div class="timeline-date">Jul 2018 – May 2020</div>
+                <p><strong><a href="https://nituk.ac.in/" target="_blank" style="color: #0d9488; text-decoration: underline;">National Institute of Technology Uttarakhand, India</a> (Silver Medal)</strong></p>
+                <p>Research Topic: Multi-authority Attribute-Based Encryption (Advisor: <a href="https://www.nitp.ac.in/profile/abhimanyu.cs@nitp.ac.in" target="_blank" style="color: #0d9488; text-decoration: underline;">Dr. Abhimanyu Kumar</a>)</p>
+            </div>
+            <div class="timeline-item">
+                <h4>B.Tech., Computer Science & Engineering</h4>
+                <div class="timeline-date">Aug 2014 – May 2018</div>
+                <p><strong><a href="https://aktu.ac.in/" target="_blank" style="color: #0d9488; text-decoration: underline;">Dr. A.P.J. Abdul Kalam Technical University, Lucknow, India</a></strong></p>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section id="awards">
+            <h2>Awards & Fellowships</h2>
+            <div class="award-item">
+                <strong>🏆 CHANAKYA Doctoral Fellowship</strong><br>
+                iHub Anubhuti–IIITD Foundation, India, 2024
+            </div>
+            <div class="award-item">
+                <strong>✈️ IEEE ComSoc Travel Grant</strong><br>
+                For presenting at IEEE GLOBECOM 2023, Kuala Lumpur, Malaysia
+            </div>
+            <div class="award-item">
+                <strong>🏅 Honorary Certificate of Appreciation</strong><br>
+                <a href="https://www.comsoc.org/membership/ieee-comsoc-student-competition/winners" target="_blank" style="color: #0d9488; text-decoration: underline;">IEEE Communications Society 2021 Student Competition</a> - Top 14 projects worldwide
+            </div>
+            <div class="award-item">
+                <strong>🥈 Silver Medal</strong><br>
+                M.Tech. performance, NIT Uttarakhand, 2020
+            </div>
+            <div class="award-item">
+                <strong>💰 National AICTE GATE Scholarship</strong><br>
+                India, 2018
+            </div>
+        </section>
+
+        <!-- Media Coverage -->
+        <section id="media">
+            <h2>Distinguished Recognitions</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: #64748b;">The novel technology for lung health monitoring has received significant national media attention:</p>
+            <div class="media-list">
+                <div class="media-item">
+                    <strong>Featured in 13 national and international media outlets:</strong> IIT Kanpur (<a href="https://www.iitk.ac.in/novel-technology-for-lung-health-monitoring" target="_blank">Technology Highlight</a>, <a href="https://www.iitk.ac.in/media-coverage-novel-technology-for-lung-health-monitoring" target="_blank">Media Coverage</a>), <a href="https://timesofindia.indiatimes.com/city/lucknow/iit-ks-tech-to-help-monitor-lung-health/articleshow/103977118.cms" target="_blank">Times of India</a>, <a href="https://www.biospectrumindia.com/news/58/23634/iit-k-develops-novel-technology-for-lung-health-monitoring.html" target="_blank">BioSpectrum India</a>, <a href="https://www.digitalhealthnews.com/iit-k-develops-affordable-unobstructive-compact-technology-to-monitor-lung-health-continuously" target="_blank">Digital Health News</a>, <a href="https://drugscontrol.org/news-detail.php?newsid=36746" target="_blank">DrugsControl.org</a>, <a href="https://theshillongtimes.com/2023/09/27/iit-k-develops-device-to-monitor-lung-health/" target="_blank">The Shillong Times</a>, <a href="https://sputniknews.in/20230927/iit-kanpur-develops-novel-technology-to-monitor-the-lungs-health-4469475.html" target="_blank">Sputnik News India</a>, <a href="https://www.shiksha.com/news/medicine-health-sciences-iit-kanpur-develops-novel-technology-for-lung-health-monitoring-blogId-134315" target="_blank">Shiksha</a>, <a href="https://www.etvbharat.com/en/!offbeat/iit-kanpur-incubated-startup-develops-device-instant-lung-tests-enn24050601016" target="_blank">ETV Bharat</a>, <a href="https://www.financialexpress.com/business/healthcare-iit-kanpur-develops-tech-for-better-health-outcomes-3269991/" target="_blank">Financial Express</a>, <a href="https://www.knocksense.com/kanpur/iit-kanpur-develops-affordable-device-for-monitoring-lung-health" target="_blank">Knocksense</a>, and <a href="https://collegedunia.com/news/iit-kanpur-pioneers-a-novel-technology-for-monitoring-lung-health-alertid-113507" target="_blank">Collegedunia</a> for developing a continuous lung health monitoring system - an affordable, compact technology with acoustic sensors that enables ubiquitous and unobstructive tracking of patients' lung health with real-time data sharing capabilities.
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <h3>IEEE/ACM Journal Papers</h3>
+            
+            <div class="publication">
+                <strong>[J1]</strong> <strong>Gupta, A.</strong> & <a href="https://cse.iitkgp.ac.in/~smisra/" target="_blank" style="color: #0d9488; text-decoration: underline;">Misra, S.</a>, "CasFly: Causal Chain Tracing Across Fragmented Edge Data for IoT Healthcare", <em>IEEE Internet of Things Journal</em>, 2025.
+                <a href="https://doi.org/10.1109/JIOT.2025.3633292" target="_blank" class="paper-link">DOI: 10.1109/JIOT.2025.3633292</a> (Just Accepted)
+            </div>
+            
+            <div class="publication">
+                <strong>[J2]</strong> Chattopadhyay, S., <strong>Gupta, A.</strong> & Misra, S., "EMsaaS: A decentralized marketplace for microservices on edge", <em>ACM Transactions on Internet of Things</em>, 2025. 
+                <a href="https://doi.org/10.1145/3767741" target="_blank" class="paper-link">DOI: 10.1145/3767741</a> (Just Accepted)
+            </div>
+            
+            <div class="publication">
+                <strong>[J3]</strong> <strong>Gupta, A.</strong>, Misra, S., Pathak, N. & <a href="https://coeah.iitkgp.ac.in/faculty-details?id=25" target="_blank" style="color: #0d9488; text-decoration: underline;">Das, D.</a>, "FedCare: Federated learning for resource-constrained IoMT devices", <em>IEEE Transactions on Computational Social Systems</em>, vol. 10, no. 4, pp. 1587-1596, 2023. 
+                <a href="https://doi.org/10.1109/TCSS.2022.3232192" target="_blank" class="paper-link">DOI: 10.1109/TCSS.2022.3232192</a>
+            </div>
+            
+            <div class="publication">
+                <strong>[J4]</strong> Kotiyal, V., <strong>Gupta, A.</strong>, <a href="https://pallvdeb.github.io/" target="_blank" style="color: #0d9488; text-decoration: underline;">Deb, P. K.</a>, Misra, S., Das, D. & <a href="https://erp.nitw.ac.in/ext/profile/cs-venkannau" target="_blank" style="color: #0d9488; text-decoration: underline;">Udutalapally, V.</a>, "Skipper: A robust Siamese network-based data-independent group activity segregator", <em>IEEE Transactions on Computational Social Systems</em>, vol. 10, no. 4, pp. 1770-1779, 2023. 
+                <a href="https://doi.org/10.1109/TCSS.2023.3244188" target="_blank" class="paper-link">DOI: 10.1109/TCSS.2023.3244188</a>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Conference Papers</h3>
+            
+            <div class="publication">
+                <strong>[C1]</strong> <strong>Gupta, A.</strong> & Misra, S., "ZhiSync: Metadata-driven inference fusion for decentralized healthcare IoT", <em>IEEE GLOBECOM 2025</em>, Kuala Lumpur, Malaysia, 2025 (Just Accepted).
+            </div>
+            
+            <div class="publication">
+                <strong>[C2]</strong> Ghosal, S., <strong>Gupta, A.</strong>, Das, D. & Misra, S., "IgniSole: Smartphone-based early detection of diabetic foot ulcers using thermal images", <em>IEEE GLOBECOM 2025</em>, Kuala Lumpur, Malaysia, 2025 (Just Accepted).
+            </div>
+            
+            <div class="publication">
+                <strong>[C3]</strong> <strong>Gupta, A.</strong>, Misra, S. & Pathak, N., "StressAlly: A smartphone-based stress companion recommender system for students", <em>IEEE GLOBECOM 2023</em>, Kuala Lumpur, Malaysia, 2023, pp. 504-509. 
+                <a href="https://doi.org/10.1109/GLOBECOM54140.2023.10437258" target="_blank" class="paper-link">DOI: 10.1109/GLOBECOM54140.2023.10437258</a>
+            </div>
+            
+            <div class="publication">
+                <strong>[C4]</strong> <strong>Gupta, A.</strong>, Misra, S. & Deb, P. K., "Magdroid: An IoT-enabled environment-aware electrical safety assistant", <em>IEEE GLOBECOM 2022</em>, Rio de Janeiro, Brazil, 2022, pp. 1152-1157. 
+                <a href="https://doi.org/10.1109/GLOBECOM48099.2022.10001379" target="_blank" class="paper-link">DOI: 10.1109/GLOBECOM48099.2022.10001379</a>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Book Chapters</h3>
+            
+            <div class="publication">
+                <strong>[B1]</strong> <strong>Gupta, A.</strong> & Kumar, A., "A novel approach to multi-authority attribute-based encryption using quadratic residues with tree access policy", in <em>Paradigms of Computing, Communication and Data Sciences</em>, Springer, Singapore, pp. 289-298, 2021. 
+                <a href="https://doi.org/10.1007/978-981-15-7533-4_24" target="_blank" class="paper-link">DOI: 10.1007/978-981-15-7533-4_24</a>
+            </div>
+            
+            <div class="publication">
+                <strong>[B2]</strong> Gudepu, V., <strong>Gupta, A.</strong> & Kumar, P., "Physical Sciences: An Inspiration to the Neural Network Training", in <em>Paradigms of Computing, Communication and Data Sciences</em>, Springer, Singapore, pp. 833-842, 2021. 
+                <a href="https://doi.org/10.1007/978-981-15-7533-4_66" target="_blank" class="paper-link">DOI: 10.1007/978-981-15-7533-4_66</a>
+            </div>
+        </section>
+
+        <!-- Patents & Copyrights -->
+        <section id="patents">
+            <h2>Patents & Copyrights</h2>
+            
+            <h3>Patents</h3>
+            
+            <div class="highlight-box">
+                <div class="patent-item">
+                    <strong>[P1]</strong> <a href="https://home.iitk.ac.in/~subhasm/" target="_blank" style="color: #0d9488; text-decoration: underline;">Misra, S. C.</a>, Misra, S., Das, D., Udutalapally, V. & <strong>Gupta, A.</strong><br>
+                    <em>"A continuous lung health monitoring system"</em><br>
+                    <span class="patent-status granted">Indian Patent No. 550077 (GRANTED)</span>
+                </div>
+                
+                <div class="patent-item">
+                    <strong>[P2]</strong> Sarkar, K., <strong>Gupta, A.</strong>, Mahadevan, S., Betha, G. & Misra, S.<br>
+                    <em>"Device, system and method for trip feasibility prediction of electric ambulances and procedure thereof"</em><br>
+                    <span class="patent-status filed">Indian Patent Application No. 2025311068436 (FILED)</span>
+                </div>
+                
+                <div class="patent-item">
+                    <strong>[P3]</strong> Chattopadhyay, S., <strong>Gupta, A.</strong> & Misra, S.<br>
+                    <em>"Systems and methods for microservice sharing in a decentralized edge network"</em><br>
+                    <span class="patent-status filed">Indian Patent Application No. 202431096826 (FILED)</span>
+                </div>
+                
+                <div class="patent-item">
+                    <strong>[P4]</strong> Misra, S., Das, D., <strong>Gupta, A.</strong> & Deora, N.<br>
+                    <em>"A system for monitoring progression of tuberculosis"</em><br>
+                    <span class="patent-status filed">Indian Patent Application No. 202531076727 (FILED)</span>
+                </div>
+                
+                <div class="patent-item">
+                    <strong>[P5]</strong> Misra, S., Das, D., Nyasa, <strong>Gupta, A.</strong><br>
+                    <em>"Edge-AI Auscultation System using a Wearable Pendant for Multi-Pulmonary Disease Diagnosis and Prognosis"</em><br>
+                    <span class="patent-status filed">Indian Patent Application (Submitted in IIT Kharagpur IPR Cell)</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Copyrights</h3>
+            
+            <div class="copyright-grid">
+                <div class="copyright-item granted-bg">
+                    <strong>[CR1]</strong> <strong>"Saans Saathi"</strong><br>
+                    <em>Smartphone-based application related to real-time in-app pulmonary tuberculosis detection</em><br>
+                    <span class="copyright-status">Indian Copyright Registration No. SW-22629/2025-CO</span><br>
+                    <small>Misra, S., Das, D., <strong>Gupta, A.</strong> & Deora, N.</small><br>
+                    <small>Filed: 05/06/2025 | Status: GRANTED</small>
+                </div>
+                
+                <div class="copyright-item registered-bg">
+                    <strong>[CR2]</strong> <strong>"Netrorja"</strong><br>
+                    <em>Smartphone-based application for real-time, in-app eye power detection</em><br>
+                    <span class="copyright-status">Indian Copyright Registration No. SW-35868/2025-CO</span><br>
+                    <small>Misra, S., Das, D., <strong>Gupta, A.</strong> & Majumdar, P.</small><br>
+                    <small>Registered: 05/09/2025</small>
+                </div>
+                
+                <div class="copyright-item filed-bg">
+                    <strong>[CR3]</strong> <strong>"i-HeelHeal"</strong><br>
+                    <em>Smartphone app for diabetic foot ulcer detection</em><br>
+                    <span class="copyright-status">Indian Copyright Application No. 3481/2025-CO/SW</span><br>
+                    <small>Das, D., Misra, S., Ghosal, S. & <strong>Gupta, A.</strong></small>
+                </div>
+                
+                <div class="copyright-item filed-bg">
+                    <strong>[CR4]</strong> <strong>"ChronoXplain"</strong><br>
+                    <em>Mobile app for temporal explanations from clinical predictions using longitudinal patient data</em><br>
+                    <span class="copyright-status">Indian Copyright Application No. SW-39932/2025-CO</span><br>
+                    <small>Evelina, M., <strong>Gupta, A.</strong> & Misra, S.</small><br>
+                    <small>Filed: 03/10/2025</small>
+                </div>
+                
+                <div class="copyright-item filed-bg">
+                    <strong>[CR5]</strong> <strong>"RankedFL"</strong><br>
+                    <em>Client ranking software in federated learning</em><br>
+                    <span class="copyright-status">Indian Copyright Application No. SW-39919/2025-CO</span><br>
+                    <small>Nyasa, <strong>Gupta, A.</strong> & Misra, S.</small><br>
+                    <small>Filed: 03/10/2025</small>
+                </div>
+                
+                <div class="copyright-item filed-bg">
+                    <strong>[CR6]</strong> <strong>"Sahay"</strong><br>
+                    <em>Mobile application for anxiety detection</em><br>
+                    <span class="copyright-status">Indian Copyright Application No. SW-42982/2025-CO</span><br>
+                    <small>Misra, S., <a href="https://sarth.iitkgp.ac.in/?cciit=ppl_juliet" target="_blank" style="color: #0d9488; text-decoration: underline;">Karmakar, J.</a>, Das, D., Saha, R., <strong>Gupta, A.</strong>, Nitin, V. H., Awasthi, A. K., Gupta, K. & <a href="https://en.wikipedia.org/wiki/Suman_Chakraborty" target="_blank" style="color: #0d9488; text-decoration: underline;">Chakraborty, S.</a></small><br>
+                    <small>Filed: 24/10/2025</small>
+                </div>
+                
+                <div class="copyright-item filed-bg">
+                    <strong>[CR7]</strong> <strong>"Mochan"</strong><br>
+                    <em>Mobile application for depression detection</em><br>
+                    <span class="copyright-status">Indian Copyright Application No. SW-42987/2025-CO</span><br>
+                    <small>Misra, S., Karmakar, J., Das, D., Saha, R., <strong>Gupta, A.</strong>, Nitin, V. H., Awasthi, A. K., Gupta, K. & Chakraborty, S.</small><br>
+                    <small>Filed: 24/10/2025</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research and Project Positions -->
+        <section id="research">
+            <h2>Research & Project Positions</h2>
+            
+            <div class="timeline-item">
+                <h4>CHANAKYA PhD Fellow</h4>
+                <div class="timeline-date">Aug 2024 – Aug 2025</div>
+                <p><strong>Indian Institute of Technology Kharagpur</strong></p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Senior Research Fellow (<a href="https://ims.iiitnr.edu.in/tribeconnect/Home.aspx" target="_blank" style="color: #0d9488; text-decoration: underline;">TribeConnect</a>, MeitY)</h4>
+                <div class="timeline-date">Oct 2022 – Dec 2023</div>
+                <p><strong>Indian Institute of Technology Kharagpur</strong></p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Junior Research Fellow (<a href="https://ims.iiitnr.edu.in/tribeconnect/Home.aspx" target="_blank" style="color: #0d9488; text-decoration: underline;">TribeConnect</a>, MeitY)</h4>
+                <div class="timeline-date">Oct 2020 – Oct 2022</div>
+                <p><strong>Indian Institute of Technology Kharagpur</strong></p>
+            </div>
+        </section>
+
+        <!-- Professional Activities and Service -->
+        <section id="service">
+            <h2>Professional Activities & Service</h2>
+            
+            <h3>Conference Presentations</h3>
+            <div class="publication">
+                <strong>[P1]</strong> <strong>Gupta, A.</strong>, "StressAlly: A smartphone-based stress companion recommender system for students", oral presentation at <em>IEEE GLOBECOM 2023</em>, Kuala Lumpur, Malaysia.
+            </div>
+            <div class="publication">
+                <strong>[P2]</strong> <strong>Gupta, A.</strong>, "Magdroid: An IoT-enabled environment-aware electrical safety assistant", online presentation at <em>IEEE GLOBECOM 2022</em>, Rio de Janeiro, Brazil.
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Executive Committee</h3>
+            <div class="publication">
+                <strong>Treasurer</strong>, IEEE CS SBC IIT Kharagpur, 2024–2025.
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Reviewer</h3>
+            <div class="publication">
+                <strong>[R1]</strong> IEEE Transactions on Cognitive Communications and Networking
+            </div>
+            <div class="publication">
+                <strong>[R2]</strong> International Journal of Communication Systems
+            </div>
+            <div class="publication">
+                <strong>[R3]</strong> IEEE Network Magazine
+            </div>
+            <div class="publication">
+                <strong>[R4]</strong> AAAI 2026
+            </div>
+            <div class="publication">
+                <strong>[R5]</strong> IEEE Globecom Workshops 2025: Softwarized Next Generation Networks for IoT Services
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Memberships</h3>
+            <div class="publication">
+                <strong>Professional Member</strong>, Association for Computing Machinery (ACM)
+            </div>
+            <div class="publication">
+                <strong>Graduate Student Member</strong>, Institute of Electrical and Electronics Engineers (IEEE)
+            </div>
+            <div class="publication">
+                <strong>Graduate Student Member</strong>, IEEE Computer Society (CS)
+            </div>
+            <div class="publication">
+                <strong>Graduate Student Member</strong>, IEEE Women in Engineering (WIE)
+            </div>
+            <div class="publication">
+                <strong>Graduate Student Member</strong>, IEEE Communications Society (ComSoc)
+            </div>
+        </section>
+
+        <!-- Teaching Experience -->
+        <section id="teaching">
+            <h2>Teaching Experience</h2>
+            
+            <div class="timeline-item">
+                <h4>ML Lecturer</h4>
+                <div class="timeline-date">2024-2025</div>
+                <p><strong>Continuing Education & Technology, IIT Kharagpur</strong></p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><a href="https://cse.iitkgp.ac.in/~smisra/stc/stc2025/iotAIandcloud/iotaifeb25.html" target="_blank" style="color: #0d9488; text-decoration: underline;">Introduction to IoT with AI-ML and Cloud Computing</a></li>
+                    <li><a href="https://cse.iitkgp.ac.in/~smisra/stc/iot/iot_jan24.html" target="_blank" style="color: #0d9488; text-decoration: underline;">Hands-on Introduction to Internet of Things with Machine Learning</a></li>
+                    <li><a href="https://cse.iitkgp.ac.in/~smisra/stc/stc2024/iot/iot_jun24.html" target="_blank" style="color: #0d9488; text-decoration: underline;">Hands-on Introduction to IoT with Generative AI and Cloud Computing</a></li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Teaching Assistant</h4>
+                <div class="timeline-date">2022-2025</div>
+                <p><strong>Indian Institute of Technology Kharagpur</strong></p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><a href="https://cse.iitkgp.ac.in/~pds/current/" target="_blank" style="color: #0d9488; text-decoration: underline;">Programming & Data Structures (Theory)</a> & <a href="https://cse.iitkgp.ac.in/noticeboard/2022/TA-allocation-2022A.pdf" target="_blank" style="color: #0d9488; text-decoration: underline;">(Lab)</a></li>
+                    <li>Computer Networks (Theory and Lab)</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Teaching Assistant</h4>
+                <div class="timeline-date">2022-2025</div>
+                <p><strong>National Programme on Technology Enhanced Learning (NPTEL)</strong></p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Introduction to IoT</li>
+                    <li>Wireless Ad Hoc and Sensor Networks</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Student Mentorship -->
+        <section id="mentorship">
+            <h2>Student Mentorship</h2>
+            
+            <h3>IIT Student Mentorship</h3>
+            <div class="publication">
+                <strong>Nyasa</strong> – Multi-lung disease monitoring (B.Tech project), Aug 2025 – Ongoing, co-mentor: Debanjan Das.
+            </div>
+            <div class="publication">
+                <strong>Subhankar Chattopadhyay</strong> – Decentralized microservices (Ph.D. thesis), Dec 2024 – Ongoing.
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">NPTEL Interns Mentorship</h3>
+            <div class="publication">
+                <strong>Sowmiya M.</strong> – Passive mental health detection, May–Jun 2025.
+            </div>
+            <div class="publication">
+                <strong>Betha Gayathri</strong> – Electric ambulances, May–Jun 2025, co-mentor(s): Kounteya Sarkar.
+            </div>
+            <div class="publication">
+                <strong>Madhura Evelina</strong> – Temporal XAI, May–Jun 2025.
+            </div>
+            <div class="publication">
+                <strong>Mahadevan S.</strong> – Electric ambulances, May–Jul 2025, co-mentor(s): Kounteya Sarkar.
+            </div>
+            <div class="publication">
+                <strong>Jyothi Anitha Chimma</strong> – Abstention learning, May–Aug 2025.
+            </div>
+            <div class="publication">
+                <strong>Abhay Kumar Awasthi</strong> – Facial mental health detection, Jul–Aug 2025, co-mentor(s): Ruelia Saha.
+            </div>
+            <div class="publication">
+                <strong>Nitin V. H.</strong> – Facial mental health detection, Jun–Sep 2025, co-mentor(s): Ruelia Saha.
+            </div>
+            <div class="publication">
+                <strong>Rohit Basu</strong> – Byzantine node detection in multi-model federated learning, Dec 2023 – Jan 2024.
+      <strong>Neha Deora</strong> – Acoustic tuberculosis detection, Aug 2024 – Jul 2025, co-mentor: Debanjan Das.
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">SWAN Lab Interns Mentorship</h3>
+            <div class="publication">
+                <strong>Nyasa</strong> – Severity-aware federated learning for non-IID IoMT, May–Jun 2024.
+            </div>
+            <div class="publication">
+                <strong>Daniya Ghosal</strong> – Reconfigurable mobile applications, Jun–Jul 2024.
+            </div>
+            <div class="publication">
+                <strong>Asmika Ghosal</strong> – Mood detection via ambient light on smartphones, Jun–Jul 2024.
+            </div>
+            <div class="publication">
+                <strong>Somilli Ghoshal</strong> – Diabetic foot detection, Jun–Jul 2024.
+            </div>
+            <div class="publication">
+                <strong>Priya Majumdar</strong> – Eye refractive error detection using ML, Jan–Mar 2025.
+            </div>
+            <div class="publication">
+                <strong>Angira Chatterjee</strong> – Nutrients detection using food images, Jan–Mar 2025.
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anshita Gupta. All rights reserved.</p>
+            <p>Ph.D. Candidate, SWAN Lab | Indian Institute of Technology Kharagpur</p>
+            <p style="margin-top: 1.5rem; font-style: italic; opacity: 0.9;">"Dream, Dream, Dream. Dreams transform into thoughts and thoughts result in action."</p>
+            <p style="opacity: 0.8;">— Dr. A.P.J. Abdul Kalam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
