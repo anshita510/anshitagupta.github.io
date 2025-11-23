@@ -54,15 +54,16 @@
             background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
             border-radius: 50%;
         }
-.hero-section::before,
-.hero-section::after {
-    pointer-events: none;   /* 👈 don't block clicks */
-}
 
-.hero-content {
-    position: relative;
-    z-index: 1;             /* 👈 ensure content sits above */
-}
+        .hero-section::before,
+        .hero-section::after {
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
 
         .hero-content {
             display: grid;
@@ -87,7 +88,17 @@
 
         .hero-left .title {
             font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+        }
+
+        /* NEW: roles line */
+        .hero-left .hero-roles {
+            margin-top: 0.2rem;
             margin-bottom: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             opacity: 0.95;
         }
 
@@ -255,7 +266,7 @@
             margin-top: 2rem;
         }
 
-        /* Stats Section */
+        /* Stats Section (unused now but kept) */
         .stats-section {
             background: linear-gradient(135deg, #0f766e 0%, #0d9488 33%, #14b8a6 66%, #2dd4bf 100%);
             padding: 3rem 0;
@@ -660,6 +671,55 @@
             border-radius: 10px 0 0 10px;
         }
 
+        /* Reflections / Poetry Section */
+        .reflections-section {
+            display: none;
+            background: #fdfaf5;
+        }
+
+        .reflections-section.visible {
+            display: block;
+        }
+
+        .poem-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 10px 30px rgba(15, 118, 110, 0.12);
+            border-left: 4px solid #0d9488;
+        }
+
+        .poem-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0d9488;
+            margin-bottom: 0.5rem;
+        }
+
+        .poem-subtitle {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .poem-text {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            white-space: pre-line;
+            color: #111827;
+        }
+
+        .poem-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+
         /* Footer */
         footer {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -674,26 +734,25 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
 
-    .hero-right {
-        order: -1;
-        margin-bottom: 2rem;
-        justify-content: center;   /* 👈 add this */
-    }
+            .hero-right {
+                order: -1;
+                margin-bottom: 2rem;
+                justify-content: center;
+            }
 
-    .hero-left h1 {
-        font-size: 2.5rem;
-    }
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
 
-    .nav-links {
-        gap: 1.5rem;
-    }
-}
-
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
 
         @media (max-width: 640px) {
             .hero-left h1 {
@@ -728,6 +787,9 @@
                     <a href="https://cse.iitkgp.ac.in/~smisra/swan/" target="_blank" style="color: white; text-decoration: underline;">SWAN Lab Member</a><br>
                     Department of Computer Science and Engineering<br>
                     Indian Institute of Technology Kharagpur</p>
+
+                    <!-- NEW: roles line -->
+                    <p class="hero-roles">Researcher • Developer • Poet</p>
                     
                     <div class="tagline">
                         Research for People, Connected Healthcare for All
@@ -744,7 +806,6 @@
                 <div class="hero-right">
                     <div class="profile-photo">
                         <img src="webphoto.jpg" alt="Anshita Gupta" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
- <!-- Replace the link above with your actual photo URL -->
                     </div>
                 </div>
             </div>
@@ -766,6 +827,8 @@
                 <li><a href="#service">Service</a></li>
                 <li><a href="#teaching">Teaching</a></li>
                 <li><a href="#mentorship">Mentorship</a></li>
+                <!-- NEW: Reflections tab -->
+                <li><a href="#reflections">Reflections</a></li>
             </ul>
         </div>
     </nav>
@@ -1202,6 +1265,39 @@
                 <strong>Angira Chatterjee</strong> – Nutrients detection using food images, Jan–Mar 2025.
             </div>
         </section>
+
+        <!-- Reflections (hidden until clicked) -->
+        <section id="reflections" class="reflections-section">
+            <h2>Reflections</h2>
+            <div class="poem-box">
+                <div class="poem-title">Little Things</div>
+                <div class="poem-subtitle">by Julia Abigail Fletcher Carney (1845)</div>
+                <div class="poem-text">
+Little drops of water,
+Little grains of sand,
+Make the mighty ocean
+And the pleasant land.
+
+So the little moments,
+Humble though they be,
+Make the mighty ages
+Of Eternity.
+
+So the little errors
+Lead the soul away
+From the paths of virtue
+Far in sin to stray.
+
+Little deeds of kindness,
+Little words of love,
+Help to make earth happy
+Like the Heaven above.
+                </div>
+                <div class="poem-note">
+                    This version is the original as given to a Mr. Green in 1845 and was later anthologized in the McGuffey Reader. Ironically, when Carney was asked about the poem years later, she did not recall ever giving the poem a title.
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -1215,17 +1311,23 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+    
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+            
+                if (targetId === '#reflections') {
+                    target.classList.add('visible');
                 }
+
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
     </script>
